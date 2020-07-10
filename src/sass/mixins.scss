@@ -80,8 +80,9 @@
 }
 
 @mixin input-behavior {
-  &:focus ~ .line {
-    display: block;
+  &:focus ~ .line:before {
+    width: 100%;
+    height: 100%;
   }
   &:focus ~ .text {
     font-size: 12px;
@@ -89,12 +90,13 @@
     top: -10px;
   }
 
-  &:not(:focus)[data-valid='false'] ~ .line {
+  &:not(:focus)[data-valid='false'] ~ .line:before {
     background-color: $color-error;
   }
 
-  &[data-valid='false'][data-touched='true'] ~ .line {
-    display: block;
+  &[data-valid='false'][data-touched='true'] ~ .line:before {
+    width: 100%;
+    height: 100%;
   }
 
   &:not(:focus)[data-valid='false'][data-touched='true'] {

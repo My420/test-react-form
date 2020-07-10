@@ -1,5 +1,4 @@
 @import './variables.scss';
-
 h1,
 h2,
 h3,
@@ -36,6 +35,15 @@ textarea {
   font-size: 15px;
   line-height: 18px;
   color: #1c1c1c;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: #1c1c1c;
+  -webkit-box-shadow: 0 0 0px 1000px $color-bg-main inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .visually-hidden:not(:focus):not(:active),
