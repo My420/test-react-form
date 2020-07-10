@@ -35,6 +35,10 @@
     background-color: $color-text-title;
     box-sizing: border-box;
   }
+
+  &:hover:after {
+    border-color: $color-focus;
+  }
 }
 
 .label.checked {

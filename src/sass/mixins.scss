@@ -63,6 +63,7 @@
   border-left: none;
   border-right: none;
   border-top: none;
+  outline: none;
 }
 
 @mixin form-label {
@@ -74,4 +75,35 @@
   position: absolute;
   z-index: 10;
   top: 8px;
+  left: 0;
+  color: $color-text-secondary;
+}
+
+@mixin input-behavior {
+  &:focus ~ .line {
+    display: block;
+  }
+  &:focus ~ .text {
+    font-size: 12px;
+    line-height: 14px;
+    top: -10px;
+  }
+
+  &:not(:focus)[data-valid='false'] ~ .line {
+    background-color: $color-error;
+  }
+
+  &[data-valid='false'][data-touched='true'] ~ .line {
+    display: block;
+  }
+
+  &:not(:focus)[data-valid='false'][data-touched='true'] {
+    color: $color-error;
+  }
+
+  &[data-filled='true'] ~ .text {
+    font-size: 12px;
+    line-height: 14px;
+    top: -10px;
+  }
 }

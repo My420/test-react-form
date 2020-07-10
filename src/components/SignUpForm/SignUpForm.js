@@ -18,8 +18,14 @@ import AgreementCheckBox from '../Inputs/AgreementCheckBox';
 import FormSubmitButton from '../FormSubmitButton';
 import styles from './SignUpForm.module.scss';
 
-const SignUpForm = ({ data, onInputChange }) => {
+const SignUpForm = ({ data, onInputChange, onSubmit }) => {
   console.log(data);
+  const isFormValid = data[INPUT_NAME_NAME].isValid
+    && data[INPUT_NAME_NICK_NAME].isValid
+    && data[INPUT_NAME_EMAIL].isValid
+    && data[INPUT_NAME_PHONE_NUMBER].isValid
+    && data[INPUT_NAME_PASSWORD].isValid
+    && data[INPUT_NAME_AGREEMENT];
   return (
     <form className={styles.form} name="signUpForm" action="signup.php">
       <p className={styles.title}>Регистрация</p>
@@ -56,8 +62,8 @@ const SignUpForm = ({ data, onInputChange }) => {
         <FormSubmitButton
           text="Зарегистрироваться"
           name="signUpSubmit"
-          onButtonClick={() => {}}
-          disabled
+          onButtonClick={onSubmit}
+          disabled={isFormValid}
         />
         <div className={styles.linkContainer}>
           <span className={styles.linkText}>Есть аккаунт?</span>

@@ -8,12 +8,17 @@ const PasswordAuthInput = ({ value, isValid, onInputChange }) => {
   console.log(isValid);
 
   const [isVisible, changeVisibility] = useState(false);
+  const [isTouched, toggleTouchedValue] = useState(false);
+
+  const handleChange = (evt) => {
+    if (!isTouched) toggleTouchedValue(true);
+    onInputChange(evt);
+  };
 
   const handleClick = () => changeVisibility(!isVisible);
 
   return (
     <label htmlFor="password" className={`${styles.label}`}>
-      <span className={styles.text}>Пароль</span>
       <input
         value={value}
         id="password"
@@ -21,8 +26,13 @@ const PasswordAuthInput = ({ value, isValid, onInputChange }) => {
         name={`${INPUT_NAME_PASSWORD}`}
         type={`${isVisible ? 'text' : 'password'}`}
         placeholder=""
-        onChange={onInputChange}
+        onChange={handleChange}
+        data-valid={isValid}
+        data-touched={isTouched}
+        data-filled={value.length > 0}
       />
+      <span className={styles.text}>Пароль</span>
+      <div className={styles.line} />
       <button className={styles.switch} type="button" onClick={handleClick}>
         <EyeIcon />
       </button>

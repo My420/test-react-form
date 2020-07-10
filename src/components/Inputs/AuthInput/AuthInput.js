@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AuthInput.module.scss';
 
@@ -6,10 +6,15 @@ const AuthInput = ({
   value, onInputChange, label, name, id, type, placeholder, isValid,
 }) => {
   console.log(isValid);
+  const [isTouched, toggleTouchedValue] = useState(false);
+
+  const handleChange = (evt) => {
+    if (!isTouched) toggleTouchedValue(true);
+    onInputChange(evt);
+  };
 
   return (
     <label htmlFor={id} className={`${styles.label}`}>
-      <span className={styles.text}>{label}</span>
       <input
         value={value}
         id={id}
@@ -17,8 +22,13 @@ const AuthInput = ({
         name={name}
         type={type}
         placeholder={placeholder}
-        onChange={onInputChange}
+        onChange={handleChange}
+        data-valid={isValid}
+        data-touched={isTouched}
+        data-filled={value.length > 0}
       />
+      <span className={styles.text}>{label}</span>
+      <div className={styles.line} />
     </label>
   );
 };

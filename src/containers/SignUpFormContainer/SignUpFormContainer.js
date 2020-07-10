@@ -16,7 +16,13 @@ const SignUpFormContainer = () => {
       dispatch(changeSignUpAgreement());
     }
   };
-  return <SignUpForm data={data} onInputChange={handleInputChange} />;
+
+  const handleFormSubbmit = (evt) => {
+    evt.preventDefault();
+    console.log('submit!');
+  };
+
+  return <SignUpForm data={data} onInputChange={handleInputChange} onSubmit={handleFormSubbmit} />;
 };
 
 export default SignUpFormContainer;
