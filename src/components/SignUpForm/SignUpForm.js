@@ -63,7 +63,7 @@ const SignUpForm = ({ data, onInputChange, onSubmit }) => {
           text="Зарегистрироваться"
           name="signUpSubmit"
           onButtonClick={onSubmit}
-          disabled={isFormValid}
+          disabled={!isFormValid}
         />
         <div className={styles.linkContainer}>
           <span className={styles.linkText}>Есть аккаунт?</span>

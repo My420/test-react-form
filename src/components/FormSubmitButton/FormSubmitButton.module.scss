@@ -16,3 +16,7 @@
   text-transform: uppercase;
   color: $color-text-button;
 }
+
+.button:disabled {
+  background: $color-bg-button-disabled;
+}

@@ -10,6 +10,7 @@ import isValidEmail from '../../utils/validateEmail';
 import isValidPassword from '../../utils/validatePassword';
 import isValidNameField from '../../utils/validateNameField';
 import isValidPhoneNumber from '../../utils/validatePhoneNumber';
+import isValidNickNameField from '../../utils/validateNickNameField';
 
 // constant
 
@@ -39,7 +40,7 @@ const validator = {
   [INPUT_NAME_PASSWORD]: isValidPassword,
   [INPUT_NAME_PHONE_NUMBER]: isValidPhoneNumber,
   [INPUT_NAME_NAME]: isValidNameField,
-  [INPUT_NAME_NICK_NAME]: isValidNameField,
+  [INPUT_NAME_NICK_NAME]: isValidNickNameField,
 };
 
 export const field = { value: '', isValid: false };

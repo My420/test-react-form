@@ -1,10 +1,8 @@
-export const PASSWORD_MIN_LENGTH = 6;
-export const PASSWORD_MAX_LENGTH = 20;
-
 const isValidPhoneNumber = (value) => {
-  if (value.length < PASSWORD_MIN_LENGTH) return false;
-  if (value.length > PASSWORD_MAX_LENGTH) return false;
-  return true;
+  const tester = /^(\+\d ?)(\d{3} ?){2}(\d{2} ?){2}$/i;
+  const valid = tester.test(value.trim());
+
+  return valid;
 };
 
 export default isValidPhoneNumber;
