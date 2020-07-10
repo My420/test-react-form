@@ -1,0 +1,18 @@
+@import '../../sass/variables.scss';
+
+.button {
+  box-sizing: border-box;
+  width: 374px;
+  height: 44px;
+
+  background: $color-bg-button;
+  border: none;
+
+  font-family: 'SFCompact';
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+
+  text-transform: uppercase;
+  color: $color-text-button;
+}

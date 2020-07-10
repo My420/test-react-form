@@ -1,0 +1,13 @@
+@import '../../../sass/mixins.scss';
+
+.input {
+  @include form-input;
+}
+
+.label {
+  @include form-label;
+}
+
+.text {
+  @include label-text;
+}

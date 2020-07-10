@@ -1,0 +1,48 @@
+/*Roboto Regular*/
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto.woff2') format('woff2'), url('../fonts/Roboto.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*Roboto Medium*/
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Robotomedium.woff2') format('woff2'),
+    url('../fonts/Robotomedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*SF Compact Display Regular*/
+@font-face {
+  font-family: 'SFCompact';
+  src: url('../fonts/SFCompactregular.woff2') format('woff2'),
+    url('../fonts/SFCompactregular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*SF Compact Display Medium*/
+@font-face {
+  font-family: 'SFCompact';
+  src: url('../fonts/SFCompactmedium.woff2') format('woff2'),
+    url('../fonts/SFCompactmedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/*SF Compact Display Semibold*/
+@font-face {
+  font-family: 'SFCompact';
+  src: url('../fonts/SFCompactsemibold.woff2') format('woff2'),
+    url('../fonts/SFCompactsemibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,77 @@
+@import './variables.scss';
+
+@mixin app-container {
+  display: flex;
+  justify-content: center;
+
+  width: 1440px;
+  height: 900px;
+
+  margin: 0 auto;
+
+  background: $color-bg-main;
+}
+
+@mixin slide-container {
+  position: relative;
+  width: 425px;
+  margin-top: 136px;
+}
+
+@mixin auth-form {
+  width: 374px;
+  margin: 0 auto;
+}
+
+@mixin form-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 47px;
+  line-height: 55px;
+
+  text-align: center;
+
+  color: $color-text-title;
+}
+
+@mixin form-msg {
+  margin-top: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 18px;
+
+  text-align: center;
+
+  color: $color-text-title;
+}
+
+@mixin form-fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+@mixin form-input {
+  position: relative;
+  width: 374px;
+  height: 31px;
+
+  border: 1px solid $color-border-input;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+@mixin form-label {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+@mixin label-text {
+  position: absolute;
+  z-index: 10;
+  top: 8px;
+}
