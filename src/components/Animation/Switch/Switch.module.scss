@@ -1,0 +1,20 @@
+.enter .container {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.enterActive .container {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.exit .container {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.exitActive .container {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.enterActive .container,
+.exitActive .container {
+  transition: opacity 500ms, transform 500ms;
+}
