@@ -1,3 +1,4 @@
+import React from 'react';
 import CheckBox from './CheckBox';
 
-export default CheckBox;
+export default React.memo(CheckBox);

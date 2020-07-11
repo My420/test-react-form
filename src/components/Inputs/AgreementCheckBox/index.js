@@ -1,3 +1,4 @@
+import React from 'react';
 import AgreementCheckBox from './AgreementCheckBox';
 
-export default AgreementCheckBox;
+export default React.memo(AgreementCheckBox);

@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styles from './AuthInput.module.scss';
 
 const AuthInput = ({
   value, onInputChange, label, name, id, type, placeholder, isValid,
 }) => {
-  console.log(isValid);
   const [isTouched, toggleTouchedValue] = useState(false);
 
-  const handleChange = (evt) => {
-    if (!isTouched) toggleTouchedValue(true);
-    onInputChange(evt);
-  };
+  const handleChange = useCallback(
+    (evt) => {
+      if (!isTouched) toggleTouchedValue(true);
+      onInputChange(evt);
+    },
+    [isTouched, toggleTouchedValue, onInputChange],
+  );
+
+  console.log('auth input');
 
   return (
     <label htmlFor={id} className={`${styles.label}`}>

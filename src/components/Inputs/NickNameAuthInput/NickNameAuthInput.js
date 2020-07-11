@@ -3,18 +3,21 @@ import PropTypes from 'prop-types';
 import { INPUT_NAME_NICK_NAME } from '../../../utils/constant';
 import AuthInput from '../AuthInput';
 
-const NickNameAuthInput = ({ value, isValid, onInputChange }) => (
-  <AuthInput
-    id="NickName"
-    name={`${INPUT_NAME_NICK_NAME}`}
-    type="text"
-    placeholder=""
-    label="Никнейм"
-    value={value}
-    isValid={isValid}
-    onInputChange={onInputChange}
-  />
-);
+const NickNameAuthInput = ({ value, isValid, onInputChange }) => {
+  console.log('nick name input');
+  return (
+    <AuthInput
+      id="NickName"
+      name={`${INPUT_NAME_NICK_NAME}`}
+      type="text"
+      placeholder=""
+      label="Никнейм"
+      value={value}
+      isValid={isValid}
+      onInputChange={onInputChange}
+    />
+  );
+};
 
 NickNameAuthInput.propTypes = {
   value: PropTypes.string.isRequired,

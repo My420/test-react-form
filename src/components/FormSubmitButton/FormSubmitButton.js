@@ -4,17 +4,20 @@ import styles from './FormSubmitButton.module.scss';
 
 const FormSubmitButton = ({
   text, name, onButtonClick, disabled,
-}) => (
-  <button
-    className={styles.button}
-    type="submit"
-    name={name}
-    onClick={onButtonClick}
-    disabled={disabled}
-  >
-    {text}
-  </button>
-);
+}) => {
+  console.log('submit button');
+  return (
+    <button
+      className={styles.button}
+      type="submit"
+      name={name}
+      onClick={onButtonClick}
+      disabled={disabled}
+    >
+      {text}
+    </button>
+  );
+};
 
 FormSubmitButton.defaultProps = {
   text: 'Submit',

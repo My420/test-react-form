@@ -3,7 +3,7 @@ import SignUpFormContainer from '../../containers/SignUpFormContainer';
 import styles from './SignUpPage.module.scss';
 
 const SignUpPage = () => {
-  console.log('page');
+  console.log('signuppage');
   return (
     <div className={styles.container}>
       <div className={styles.slideContainer}>

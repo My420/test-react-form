@@ -1,3 +1,4 @@
+import React from 'react';
 import FromSubmitButton from './FormSubmitButton';
 
-export default FromSubmitButton;
+export default React.memo(FromSubmitButton);

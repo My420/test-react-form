@@ -19,7 +19,7 @@ import FormSubmitButton from '../FormSubmitButton';
 import styles from './SignUpForm.module.scss';
 
 const SignUpForm = ({ data, onInputChange, onSubmit }) => {
-  console.log(data);
+  console.log('signup form');
   const isFormValid = data[INPUT_NAME_NAME].isValid
     && data[INPUT_NAME_NICK_NAME].isValid
     && data[INPUT_NAME_EMAIL].isValid

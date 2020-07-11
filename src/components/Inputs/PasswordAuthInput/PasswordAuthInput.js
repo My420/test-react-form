@@ -5,8 +5,6 @@ import EyeIcon from '../../Icons/EyeIcon/EyeIcon';
 import styles from './PasswordAuthInput.module.scss';
 
 const PasswordAuthInput = ({ value, isValid, onInputChange }) => {
-  console.log(isValid);
-
   const [isVisible, changeVisibility] = useState(false);
   const [isTouched, toggleTouchedValue] = useState(false);
 
@@ -16,6 +14,8 @@ const PasswordAuthInput = ({ value, isValid, onInputChange }) => {
   };
 
   const handleClick = () => changeVisibility(!isVisible);
+
+  console.log('password input');
 
   return (
     <label htmlFor="password" className={`${styles.label}`}>

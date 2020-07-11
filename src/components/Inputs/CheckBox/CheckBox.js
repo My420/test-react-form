@@ -5,7 +5,7 @@ import styles from './CheckBox.module.scss';
 const CheckBox = ({
   checked, onChange, label, name, id,
 }) => {
-  console.log(checked);
+  console.log('check box');
 
   return (
     <label htmlFor={id} className={`${styles.label} ${checked ? styles.checked : ''}`}>
