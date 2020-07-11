@@ -1,7 +1,12 @@
 import React, { useCallback } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { INPUT_NAME_AGREEMENT, SIGN_IN_PAGE } from '../../utils/constant';
-import { getSignUpFormData, changeSignUpForm, changeSignUpAgreement } from '../../ducks/signUp';
+import {
+  getSignUpFormData,
+  changeSignUpForm,
+  changeSignUpAgreement,
+  sendData,
+} from '../../ducks/signUp';
 import { getSignUpStatus, signUpUser } from '../../ducks/status';
 import SignUpForm from '../../components/SignUpForm';
 import SuccessScreen from '../../components/SuccessScreen/SuccessScreen';
@@ -28,6 +33,7 @@ const SignUpFormContainer = () => {
     (evt) => {
       evt.preventDefault();
       dispatch(signUpUser());
+      dispatch(sendData());
     },
     [dispatch],
   );

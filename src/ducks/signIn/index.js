@@ -1,6 +1,8 @@
 import { INPUT_NAME_LOGIN, INPUT_NAME_PASSWORD } from '../../utils/constant';
 import isValidLogin from '../../utils/validateLogin';
 import isValidPassword from '../../utils/validatePassword';
+import { sendSignInData } from '../../services/AuthServices';
+import getDataFromFormState from '../../utils/getDataFromFormState';
 
 // constant
 
@@ -13,6 +15,14 @@ export const changeSignInForm = (inputName, value) => ({
   type: CHANGE_SIGN_IN_FORM,
   payload: { inputName, value },
 });
+
+// async action creator
+
+export const sendData = () => async (dispatch, getState) => {
+  const formState = getState()[moduleName];
+  const data = getDataFromFormState(formState);
+  sendSignInData(data);
+};
 
 // selector
 

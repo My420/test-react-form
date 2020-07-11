@@ -11,6 +11,8 @@ import isValidPassword from '../../utils/validatePassword';
 import isValidNameField from '../../utils/validateNameField';
 import isValidPhoneNumber from '../../utils/validatePhoneNumber';
 import isValidNickNameField from '../../utils/validateNickNameField';
+import { sendSignUpData } from '../../services/AuthServices';
+import getDataFromFormState from '../../utils/getDataFromFormState';
 
 // constant
 
@@ -28,6 +30,14 @@ export const changeSignUpForm = (inputName, value) => ({
 export const changeSignUpAgreement = () => ({
   type: CHANGE_SIGN_UP_AGREEMENT,
 });
+
+// async action creator
+
+export const sendData = () => async (dispatch, getState) => {
+  const formState = getState()[moduleName];
+  const data = getDataFromFormState(formState);
+  sendSignUpData(data);
+};
 
 // selector
 

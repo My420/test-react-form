@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { getSignInFormData, changeSignInForm } from '../../ducks/signIn';
+import { getSignInFormData, changeSignInForm, sendData } from '../../ducks/signIn';
 import { getSignInStatus, signInUser } from '../../ducks/status';
 import SignInForm from '../../components/SignInForm';
 import SuccessScreen from '../../components/SuccessScreen/SuccessScreen';
@@ -23,6 +23,7 @@ const SignInFormContainer = () => {
     (evt) => {
       evt.preventDefault();
       dispatch(signInUser());
+      dispatch(sendData());
     },
     [dispatch],
   );
