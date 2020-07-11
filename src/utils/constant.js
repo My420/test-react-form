@@ -7,3 +7,5 @@ export const INPUT_NAME_AGREEMENT = 'AGREEMENT';
 
 export const SIGN_UP_PAGE = '/signup';
 export const SIGN_IN_PAGE = '/signin';
+
+export const SUCCESS_PAGE_DURATION = 2000;

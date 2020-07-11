@@ -2,10 +2,13 @@ import React, { useCallback } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import { INPUT_NAME_AGREEMENT } from '../../utils/constant';
 import { getSignUpFormData, changeSignUpForm, changeSignUpAgreement } from '../../ducks/signUp';
+import { getSignUpStatus, signUpUser } from '../../ducks/status';
 import SignUpForm from '../../components/SignUpForm';
+import SuccessScreen from '../../components/SuccessScreen/SuccessScreen';
 
 const SignUpFormContainer = () => {
   const data = useSelector(getSignUpFormData, shallowEqual);
+  const isUserSignUp = useSelector(getSignUpStatus);
   const dispatch = useDispatch();
 
   const handleInputChange = useCallback(
@@ -20,14 +23,25 @@ const SignUpFormContainer = () => {
     [dispatch],
   );
 
-  const handleFormSubmit = useCallback((evt) => {
-    evt.preventDefault();
-    console.log('submit!');
-  }, []);
+  const handleFormSubmit = useCallback(
+    (evt) => {
+      evt.preventDefault();
+      dispatch(signUpUser());
+    },
+    [dispatch],
+  );
 
   console.log('signup form container');
 
-  return <SignUpForm data={data} onInputChange={handleInputChange} onSubmit={handleFormSubmit} />;
+  return (
+    <>
+      {isUserSignUp ? (
+        <SuccessScreen msg="Вы зарегистрированы" />
+      ) : (
+        <SignUpForm data={data} onInputChange={handleInputChange} onSubmit={handleFormSubmit} />
+      )}
+    </>
+  );
 };
 
 export default SignUpFormContainer;
