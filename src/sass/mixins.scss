@@ -21,6 +21,7 @@
 @mixin auth-form {
   width: 374px;
   margin: 0 auto;
+  animation: appearance 1s linear;
 }
 
 @mixin form-title {
@@ -107,5 +108,17 @@
     font-size: 12px;
     line-height: 14px;
     top: -10px;
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
