@@ -1,0 +1,20 @@
+.switchAnimation-enter .animationContainer {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.switchAnimation-enter-active .animationContainer {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.switchAnimation-exit .animationContainer {
+  opacity: 1;
+  transform: translateX(0%);
+}
+.switchAnimation-exit-active .animationContainer {
+  opacity: 0;
+  transform: translateX(100%);
+}
+.switchAnimation-enter-active .animationContainer,
+.switchAnimation-exit-active .animationContainer {
+  transition: opacity 500ms, transform 500ms;
+}

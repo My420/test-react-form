@@ -5,6 +5,7 @@ import { getSignUpFormData, changeSignUpForm, changeSignUpAgreement } from '../.
 import { getSignUpStatus, signUpUser } from '../../ducks/status';
 import SignUpForm from '../../components/SignUpForm';
 import SuccessScreen from '../../components/SuccessScreen/SuccessScreen';
+import SwitchAnimation from '../../components/Animation/Switch/Switch';
 
 const SignUpFormContainer = () => {
   const data = useSelector(getSignUpFormData, shallowEqual);
@@ -31,15 +32,17 @@ const SignUpFormContainer = () => {
     [dispatch],
   );
 
-  console.log('signup form container');
+  console.log('signup form container', isUserSignUp);
 
   return (
     <>
-      {isUserSignUp ? (
-        <SuccessScreen msg="Вы зарегистрированы" />
-      ) : (
-        <SignUpForm data={data} onInputChange={handleInputChange} onSubmit={handleFormSubmit} />
-      )}
+      <SwitchAnimation isPlay={isUserSignUp}>
+        {isUserSignUp ? (
+          <SuccessScreen msg="Вы зарегистрированы" />
+        ) : (
+          <SignUpForm data={data} onInputChange={handleInputChange} onSubmit={handleFormSubmit} />
+        )}
+      </SwitchAnimation>
     </>
   );
 };
