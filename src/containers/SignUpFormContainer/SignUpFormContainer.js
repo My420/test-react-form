@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
-import { INPUT_NAME_AGREEMENT } from '../../utils/constant';
+import { INPUT_NAME_AGREEMENT, SIGN_IN_PAGE } from '../../utils/constant';
 import { getSignUpFormData, changeSignUpForm, changeSignUpAgreement } from '../../ducks/signUp';
 import { getSignUpStatus, signUpUser } from '../../ducks/status';
 import SignUpForm from '../../components/SignUpForm';
@@ -38,7 +38,7 @@ const SignUpFormContainer = () => {
     <>
       <SwitchAnimation isPlay={isUserSignUp}>
         {isUserSignUp ? (
-          <SuccessScreen msg="Вы зарегистрированы" />
+          <SuccessScreen msg="Вы зарегистрированы" redirectAddress={SIGN_IN_PAGE} />
         ) : (
           <SignUpForm data={data} onInputChange={handleInputChange} onSubmit={handleFormSubmit} />
         )}

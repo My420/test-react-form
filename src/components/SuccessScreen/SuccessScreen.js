@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import SuccessIcon from '../Icons/SuccessIcon/SuccessIcon';
 import styles from './SuccessScreen.module.scss';
-import { SUCCESS_PAGE_DURATION, SIGN_IN_PAGE } from '../../utils/constant';
+import { SUCCESS_PAGE_DURATION } from '../../utils/constant';
 
-const SuccessScreen = ({ msg, history }) => {
+const SuccessScreen = ({ msg, history, redirectAddress }) => {
   console.log('SuccessScreen');
 
   useEffect(() => {
     const id = setTimeout(() => {
-      history.push(SIGN_IN_PAGE);
+      if (redirectAddress) history.push(redirectAddress);
     }, SUCCESS_PAGE_DURATION);
 
     return () => clearTimeout(id);
@@ -27,9 +27,14 @@ const SuccessScreen = ({ msg, history }) => {
   );
 };
 
+SuccessScreen.defaultProps = {
+  redirectAddress: '',
+};
+
 SuccessScreen.propTypes = {
   msg: PropTypes.string.isRequired,
   history: PropTypes.object.isRequired,
+  redirectAddress: PropTypes.string,
 };
 
 export default withRouter(SuccessScreen);

@@ -1,4 +1,6 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   INPUT_NAME_EMAIL,
@@ -63,7 +65,7 @@ const SignUpForm = ({ data, onInputChange, onSubmit }) => {
           text="Зарегистрироваться"
           name="signUpSubmit"
           onButtonClick={onSubmit}
-          disabled={isFormValid}
+          disabled={!isFormValid}
         />
         <div className={styles.linkContainer}>
           <span className={styles.linkText}>Есть аккаунт?</span>
@@ -74,6 +76,12 @@ const SignUpForm = ({ data, onInputChange, onSubmit }) => {
       </fieldset>
     </form>
   );
+};
+
+SignUpForm.propTypes = {
+  data: PropTypes.object.isRequired,
+  onInputChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SignUpForm;

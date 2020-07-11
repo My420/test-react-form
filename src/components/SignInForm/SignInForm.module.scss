@@ -1,0 +1,54 @@
+@import '../../sass/mixins.scss';
+
+.form {
+  @include auth-form;
+}
+.title {
+  @include form-title;
+}
+.msg {
+  @include form-msg;
+}
+
+.inputFieldset,
+.controlFieldset {
+  @include form-fieldset;
+}
+
+.inputFieldset {
+  margin-top: 91px;
+  margin-bottom: 10px;
+}
+
+.controlFieldset {
+  margin-bottom: 20px;
+}
+
+.inputFieldset label:last-child input {
+  height: 33px;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 33px;
+}
+
+.linkText {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: $color-text-secondary;
+}
+
+.link {
+  padding-left: 11px;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 20px;
+  color: $color-text-link;
+  text-decoration: none;
+}
