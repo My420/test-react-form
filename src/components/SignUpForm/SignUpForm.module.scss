@@ -18,6 +18,11 @@
 .inputFieldset {
   margin-top: 91px;
   margin-bottom: 32px;
+  @media (max-width: $Mobile-max-width) {
+    & {
+      margin-top: 30px;
+    }
+  }
 }
 
 .inputFieldset label:last-child {

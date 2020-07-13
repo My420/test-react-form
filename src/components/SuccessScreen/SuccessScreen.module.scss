@@ -13,6 +13,11 @@
 
   margin: 0 auto;
   margin-top: 140px;
+  @media (max-width: $Mobile-max-width) {
+    & {
+      margin-top: 20px;
+    }
+  }
 }
 
 .text {
@@ -26,4 +31,9 @@
   text-align: center;
 
   color: $color-text-title;
+  @media (max-width: $Mobile-max-width) {
+    & {
+      font-size: 35px;
+    }
+  }
 }

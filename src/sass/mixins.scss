@@ -4,8 +4,10 @@
   display: flex;
   justify-content: center;
 
-  width: 1440px;
-  height: 900px;
+  width: 100%;
+
+  max-width: 1440px;
+  // height: 900px;
 
   margin: 0 auto;
 
@@ -16,12 +18,23 @@
   position: relative;
   width: 425px;
   margin-top: 136px;
+  @media (max-width: $Mobile-max-width) {
+    & {
+      width: 100%;
+      margin-top: 0px;
+    }
+  }
 }
 
 @mixin auth-form {
   width: 374px;
   margin: 0 auto;
   animation: appearance 1s linear;
+  @media (max-width: $Mobile-max-width) {
+    & {
+      width: 90%;
+    }
+  }
 }
 
 @mixin form-title {
@@ -65,6 +78,13 @@
   border-right: none;
   border-top: none;
   outline: none;
+
+  @media (max-width: $Mobile-max-width) {
+    & {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
 }
 
 @mixin form-label {

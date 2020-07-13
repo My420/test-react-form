@@ -17,6 +17,12 @@
   color: $color-text-button;
 
   transition: background-color 200ms linear;
+
+  @media (max-width: $Mobile-max-width) {
+    & {
+      width: 100%;
+    }
+  }
 }
 
 .button:disabled {
