@@ -15,8 +15,6 @@ const PasswordAuthInput = ({ value, isValid, onInputChange }) => {
 
   const handleClick = () => changeVisibility(!isVisible);
 
-  console.log('password input');
-
   return (
     <label htmlFor="password" className={`${styles.label}`}>
       <input

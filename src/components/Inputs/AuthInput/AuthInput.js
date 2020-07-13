@@ -15,8 +15,6 @@ const AuthInput = ({
     [isTouched, toggleTouchedValue, onInputChange],
   );
 
-  console.log('auth input');
-
   return (
     <label htmlFor={id} className={`${styles.label}`}>
       <input

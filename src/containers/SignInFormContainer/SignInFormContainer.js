@@ -28,8 +28,6 @@ const SignInFormContainer = () => {
     [dispatch],
   );
 
-  console.log('signin form container');
-
   return (
     <>
       <SwitchAnimation isPlay={isUserSignIn}>

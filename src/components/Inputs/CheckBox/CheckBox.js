@@ -4,23 +4,19 @@ import styles from './CheckBox.module.scss';
 
 const CheckBox = ({
   checked, onChange, label, name, id,
-}) => {
-  console.log('check box');
-
-  return (
-    <label htmlFor={id} className={`${styles.label} ${checked ? styles.checked : ''}`}>
-      <input
-        checked={checked}
-        id={id}
-        className={`${styles.input}`}
-        name={name}
-        type="checkbox"
-        onChange={onChange}
-      />
-      <span className={styles.text}>{label}</span>
-    </label>
-  );
-};
+}) => (
+  <label htmlFor={id} className={`${styles.label} ${checked ? styles.checked : ''}`}>
+    <input
+      checked={checked}
+      id={id}
+      className={`${styles.input}`}
+      name={name}
+      type="checkbox"
+      onChange={onChange}
+    />
+    <span className={styles.text}>{label}</span>
+  </label>
+);
 
 CheckBox.propTypes = {
   checked: PropTypes.bool.isRequired,

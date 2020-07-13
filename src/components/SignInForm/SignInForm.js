@@ -9,7 +9,6 @@ import FormSubmitButton from '../FormSubmitButton';
 import styles from './SignInForm.module.scss';
 
 const SignInForm = ({ data, onInputChange, onSubmit }) => {
-  console.log('signin form');
   const isFormValid = data[INPUT_NAME_LOGIN].isValid && data[INPUT_NAME_PASSWORD].isValid;
 
   return (

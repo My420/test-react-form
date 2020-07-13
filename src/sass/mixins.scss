@@ -98,6 +98,7 @@
   top: 8px;
   left: 0;
   color: $color-text-secondary;
+  transition: linear 200ms top, linear 200ms font-size;
 }
 
 @mixin input-behavior {

@@ -7,8 +7,6 @@ import styles from './SuccessScreen.module.scss';
 import { SUCCESS_PAGE_DURATION } from '../../utils/constant';
 
 const SuccessScreen = ({ msg, history, redirectAddress }) => {
-  console.log('SuccessScreen');
-
   useEffect(() => {
     const id = setTimeout(() => {
       if (redirectAddress) history.push(redirectAddress);

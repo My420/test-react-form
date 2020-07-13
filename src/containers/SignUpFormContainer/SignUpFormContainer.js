@@ -38,8 +38,6 @@ const SignUpFormContainer = () => {
     [dispatch],
   );
 
-  console.log('signup form container', isUserSignUp);
-
   return (
     <>
       <SwitchAnimation isPlay={isUserSignUp}>
